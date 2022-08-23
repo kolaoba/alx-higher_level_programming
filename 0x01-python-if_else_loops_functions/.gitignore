@@ -1,1 +1,2 @@
-create_file.sh
+create_file
+__pycache__/
