@@ -10,10 +10,10 @@ def roman_to_int(roman_string):
     if len(arr) == 1:
         return arr[0]
     else:
-        sum_ = arr[0]
-        for idx in range(1, len(arr)):
-            if arr[idx] <= arr[idx-1]:
-                sum_ += arr[idx]
+        sum_ = arr[-1]
+        for idx in range(len(arr)-1, 0, -1):
+            if arr[idx] > arr[idx-1]:
+                sum_ -= arr[idx-1]
             else:
-                sum_ -= arr[idx]
-    return abs(sum_)
+                sum_ += arr[idx-1]
+    return sum_
