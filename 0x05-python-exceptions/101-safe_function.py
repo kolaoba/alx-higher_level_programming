@@ -15,8 +15,7 @@ def safe_function(fct, *args):
         the result(s) of the function
     """
     try:
-        res = fct(*args)
-        return res
-    except:
-        print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
+        return fct(*args)
+    except Exception as exception:
+        print("Exception: {}".format(exception), file=sys.stderr)
         return None
