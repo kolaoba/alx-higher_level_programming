@@ -1,0 +1,76 @@
+# 0-add_integer.txt
+
+The ``0-add_integer`` module
+=============================
+
+Using the ``add_integer`` function
+----------------------------------
+
+Import function from the module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test various instances for a with default b value:
+
+	>>> add_integer(5)
+	103
+
+	>>> add_integer("string")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(6.5)
+	104
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+                ...
+        TypeError: a must be an integer
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer('500')
+	Traceback (most recent call last):
+                ...
+        TypeError: a must be an integer
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+Test various instances for b:
+
+        >>> add_integer(5, 105)
+        110
+
+        >>> add_integer(10, "string")
+        Traceback (most recent call last):
+                ...
+        TypeError: b must be an integer
+
+        >>> add_integer(98, 6.5)
+        104
+
+        >>> add_integer(44, None)
+        Traceback (most recent call last):
+                ...
+        TypeError: b must be an integer
+
+        >>> add_integer(53, float('inf'))
+        Traceback (most recent call last):
+                ...
+        OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(45, '500')
+        Traceback (most recent call last):
+                ...
+        TypeError: b must be an integer
+
+        >>> add_integer(32, float('nan'))
+        Traceback (most recent call last):
+                ...
+        ValueError: cannot convert float NaN to integer
