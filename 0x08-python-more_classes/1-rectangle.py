@@ -6,7 +6,7 @@ class Rectangle:
     """
     Represent a rectangle
     """
-    
+
     def __init__(self, width=0, height=0):
         """
         Initialize a new Rectangle
@@ -16,7 +16,7 @@ class Rectangle:
             height (int): height of the new rectangle
         """
         self.width = width
-        self.height =height
+        self.height = height
 
         @property
         def width(self):
