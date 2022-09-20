@@ -7,7 +7,7 @@ Using the ``matrix_divided(matrix, div)`` function
 --------------------------------------------------
 
 This function returns a new matrix that is a copy of 
-the param ``matrix`` with alll its elements divided by ``div``
+the param ``matrix`` with all its elements divided by ``div``
 
 
 Importing the function

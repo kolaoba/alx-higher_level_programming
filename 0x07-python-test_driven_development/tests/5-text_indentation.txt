@@ -1,0 +1,54 @@
+# 5-text_indentation.txt
+
+The ``text_indentation`` module
+=============================
+
+Using the ``text_indentation(text)`` function
+--------------------------------------------------
+
+This function prints two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+
+
+Importing the function
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing the text argument
+================================
+	
+	>>> text_indentation("Is this thing on?")
+	Is this thing on?
+	<BLANKLINE>
+
+	>>> text_indentation("      no leading spaces.")
+	no leading spaces.
+	<BLANKLINE>
+
+	>>> text_indentation("         ")
+
+	>>> text_indentation("No trailing spaces.     ")
+	No trailing spaces.
+	<BLANKLINE>
+
+	
+Testing the ``\n`` argument
+===========================
+
+	>>> text_indentation("Print a new line after this:\nDone.")
+	Print a new line after this:
+	<BLANKLINE>
+	<BLANKLINE>
+	Done.
+	<BLANKLINE>
+
+Invalid Text
+============
+	>>> text_indentation(500)
+        Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
