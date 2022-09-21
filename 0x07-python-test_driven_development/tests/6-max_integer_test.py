@@ -25,6 +25,11 @@ class TestMaxInteger(unittest.TestCase):
         empty = []
         self.assertEqual(max_integer(empty), None)
 
+    def test_max_at_the_beginning(self):
+        """Tests when max at beginning of list"""
+        max_list = [500, 2, 5, 490, 85]
+        self.assertEqual(max_integer(max_list), 500)
+
     def test_single_element_list(self):
         """Test a single element list"""
         single = [10]
