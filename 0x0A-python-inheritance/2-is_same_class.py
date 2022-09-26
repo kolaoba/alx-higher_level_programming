@@ -8,7 +8,7 @@ an instance of the specified class
 def is_same_class(obj, a_class):
     """
     returns True if obj type is exactly same as a_class
-    
+
     Args:
         obj (any): object type to be compared
         a_class (class): class to be compared
