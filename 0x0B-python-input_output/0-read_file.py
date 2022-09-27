@@ -6,7 +6,7 @@ def read_file(filename=""):
     """reads UTF8 file and prints to stdout
 
     Args:
-        filename (file): file to be read
+        filename (str): file to be read
     """
     with open(filename, encoding='utf-8') as f:
         print(f.read(), end='')
