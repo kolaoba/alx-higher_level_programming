@@ -87,12 +87,42 @@ class Rectangle(Base):
         if self.width == 0 or self.height == 0:
             print("")
             return
-        
+
         [print("") for _ in range(self.y)]
         for _ in range(self.height):
             [print(" ", end="") for _ in range(self.x)]
             [print('#', end="") for _ in range(self.width)]
             print("")
+
+    def update(self, *args):
+        """
+        updates the Rectangle
+
+        Args:
+            *args (ints): new attribute values where:
+                1st argument should be the id attribute
+                2nd argument should be the width attribute
+                3rd argument should be the height attribute
+                4th argument should be the x attribute
+                5th argument should be the y attribute
+        """
+        if args and len(args) != 0:
+            cnt = 0
+            for arg in args:
+                if cnt == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif cnt == 1:
+                    self.width = arg
+                elif cnt == 2:
+                    self.height = arg
+                elif cnt == 3:
+                    self.x = arg
+                elif cnt == 4:
+                    self.y = arg
+                cnt += 1
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
