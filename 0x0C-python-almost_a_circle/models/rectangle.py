@@ -94,7 +94,7 @@ class Rectangle(Base):
             [print('#', end="") for _ in range(self.width)]
             print("")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         updates the Rectangle
 
@@ -110,7 +110,7 @@ class Rectangle(Base):
             cnt = 0
             for arg in args:
                 if cnt == 0:
-                    if arg is None:
+                    if not arg:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
                         self.id = arg
@@ -123,6 +123,22 @@ class Rectangle(Base):
                 elif cnt == 4:
                     self.y = arg
                 cnt += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, arg in kwargs.items():
+                if key == "id":
+                    if not arg:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif key == "width":
+                    self.width = arg
+                elif key == "height":
+                    self.height = arg
+                elif key == "x":
+                    self.x = arg
+                elif key == "y":
+                    self.y = arg
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
