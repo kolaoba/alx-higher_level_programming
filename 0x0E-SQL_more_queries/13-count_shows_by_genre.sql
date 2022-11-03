@@ -5,4 +5,4 @@ SELECT
 FROM tv_show_genres AS tsg
 JOIN tv_genres tg ON tg.id = tsg.genre_id
 GROUP BY tsg.genre_id
-ORDER BY number_of_shows DESC, tsg.id ASC;
+ORDER BY number_of_shows DESC, tg.id ASC;
