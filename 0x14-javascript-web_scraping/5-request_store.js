@@ -13,9 +13,8 @@ request.get(url,
     if (!error && response.statusCode === 200) {
       fs.writeFile(fileName, body, function (err) {
         if (err) console.error(err);
-        console.log(`Webpage saved to ${fileName}`);
       });
     } else {
-      console.log(`Error: ${error}`);
+      console.error(error);
     }
   });
